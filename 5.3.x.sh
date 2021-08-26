@@ -25,8 +25,10 @@ value4=$(echo $value | awk '{print $4}')
 value44=$(echo ${value4: -2})
 if [ $value11 = 00 -a $value22 = 00 -a $value33 = 00 -a $value44 = 00 ]
 then
+        echo $value11 $value22 $value33 $value44
         echo "group and others doesn't have any access"
 else
+        echo $value11 $value22 $value33 $value44
         find /etc/ssh -xdev -type f -name 'ssh_host_*_key' -exec chmod u-x,go-rwx {} \;
         find /etc/ssh -xdev -type f -name 'ssh_host_*_key' -exec chown root:root {} \;
         echo "We have changed the ownership to root and removed the access of group and others"
