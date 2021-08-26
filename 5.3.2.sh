@@ -1,16 +1,3 @@
-#5.3.1 Ensure permissions on /etc/ssh/sshd_config are configured
-value=$(stat -c %a /etc/ssh/sshd_config)
-value2=$(echo "${value: -2}")
-if [ $value2 = 00 ]
-then
-        echo "group and others doesn't have any access"
-else
-        chown root:root /etc/ssh/sshd_config
-        chmod og-rwx /etc/ssh/sshd_config
-        echo "We have changed the ownership to root and removed the access of group and others"
-fi
-
-#5.3.2 Ensure permissions on SSH private host key files are configured 
 value=$(stat -c %a /etc/ssh/ssh_host_*_key)
 value1=$(echo $value | awk '{print $1}')
 value11=$(echo ${value1: -2})
