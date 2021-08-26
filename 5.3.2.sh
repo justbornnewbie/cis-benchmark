@@ -1,3 +1,4 @@
+#!/bin/bash
 value=$(stat -c %a /etc/ssh/ssh_host_*_key)
 value1=$(echo $value | awk '{print $1}')
 value11=$(echo ${value1: -2})
