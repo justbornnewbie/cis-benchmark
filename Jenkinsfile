@@ -5,8 +5,8 @@ pipeline {
     stages{
         stage("5.3.2"){
             steps{
-                sh '''
-                bash 5.3.2.sh
+                bash '''
+                ./5.3.2.sh
                 '''
             }
         }
