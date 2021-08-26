@@ -7,7 +7,7 @@ pipeline {
             steps{
                 sh '''
                 ./5.3.2.sh
-                   '''
+                '''
             }
         }
     }
