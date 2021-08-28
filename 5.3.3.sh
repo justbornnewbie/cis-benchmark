@@ -15,7 +15,7 @@ if [ $value11 = 00 -a $value22 = 00 -a $value33 = 00 -a $value44 = 00 ]
 then
         echo "group and others doesn't have any access"
 else
-        find /etc/ssh -xdev -type f -name 'ssh_host_*_key' -exec chmod u-x,go-rwx {} \;
-        find /etc/ssh -xdev -type f -name 'ssh_host_*_key' -exec chown root:root {} \;
+        find /etc/ssh -xdev -type f -name 'ssh_host_*_key.pub' -exec chmod u-x,go-rwx {} \;
+        find /etc/ssh -xdev -type f -name 'ssh_host_*_key.pub' -exec chown root:root {} \;
         echo "We have changed the ownership to root and removed the access of group and others"
 fi
